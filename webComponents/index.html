@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components</title>
+    <script src="tooltip.js"></script>
+</head>
+
+<body>
+
+    <!-- El <template> contiene un conjunto de elementos que no se renderizan automáticamente en el DOM.
+        <slot> es un espacio reservado donde se proyectará contenido desde el exterior cuando el componente sea usado, permitiendo que el contenido del Light DOM sea insertado en el Shadow DOM. s decir, cualquier contenido que se ponga dentro de un <sm-component>, cuando se use, será proyectado dentro de este <slot> en el Shadow DOM del componente.-->
+  <!--   
+    <template id="tooltip-template">
+        <slot>Some default into slot</slot> <span> ( ? )</span> 
+    </template>  
+    -->  <!-- Una de las 2 alternativas para usar templates -->
+
+    <p>
+        <sm-component text="Web components are a set of standards">Web Components </sm-component> are Awesomw!
+    </p>
+    <sm-component></sm-component>
+</body>
+
+</html>
