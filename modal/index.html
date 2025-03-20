@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="modal.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 2rem;
+            font-family: sans-serif;
+        }
+
+        /* Código al interior del web component */
+    
+       
+        
+        /* ------------------------------------ */
+
+    </style>
+</head>
+<body>
+    <sm-modal>
+        <h1 slot="title">Please Confirm!</h1> <!-- Al colocar el atributo slot con el name de la etiqueta colocada en el Js, el contenido se visualizará en esta etiqueta -->
+        <p>Con tu confirmación aceptas que el monto de pago es el correcto</p>
+    </sm-modal>
+    <p>Please confirm your choice!</p>
+    <button>Show details & Confirm</button>
+
+    <script>
+        const confirmButton = document.querySelector('button');
+        const modal = document.querySelector('sm-modal');
+        
+        modal.addEventListener('confirm',()=>{
+            console.log('Confirmed...');
+        })
+
+        modal.addEventListener('cancel', ()=>{
+            console.log('Canceled...');
+        })
+
+        //------------------------------------------
+        modal.addEventListener('backdropClick', ()=>{
+            console.log("Click on backdrop")
+        })
+        //------------------------------------------
+        
+        confirmButton.addEventListener('click', ()=>{
+            /* modal.setAttribute('opened', ''); */
+            if(!modal.isOpen){ 
+                modal.open();
+                console.log('Opening...');
+            }
+           
+        });
+    </script>
+
+    <!-- codigo al interior del Web Component -->
+
+
+    <!-- ------------------------------------ -->
+
+
+</body>
+</html>
