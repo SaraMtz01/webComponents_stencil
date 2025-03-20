@@ -6,6 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Components</title>
     <script src="tooltip.js"></script>
+    <script src="confirm-link.js"></script>  
+
+    
+
+    <style>
+        *{box-sizing: border-box;}
+        /* Variable CSS */
+        html{
+            --color-primary: rgb(208, 248, 90);
+            font-family: sans-serif; /* se aplica a todo el html */
+        }
+        div {
+            border: 2px solid orangered;
+        }
+
+        .subrayar{
+            background-color: rgb(215, 177, 108); /* Este estilo solo se aplica a los elementos de la página que no están dentro del shadow DOM de tu componente, lo que significa que no afecta a los elementos dentro del shadow DOM del componente sm-component. */
+
+            /* border-bottom: 4px solid rgb(112, 211, 244); */ /* Esto sobre escribe al estilo definido en el sahdow DOM */
+        }
+
+        sm-component{
+            border: 2px solid rgba(4, 163, 242, 0.738);
+            padding: 0.15rem;
+
+        }
+
+       
+    </style>
 </head>
 
 <body>
@@ -19,9 +48,15 @@
     -->  <!-- Una de las 2 alternativas para usar templates -->
 
     <p>
-        <sm-component text="Web components are a set of standards">Web Components </sm-component> are Awesomw!
+        <sm-component class="itsImportant" text="Web components are a set of standards">
+            <span class="subrayar">Web Components </span> 
+        </sm-component> are Awesomw!
     </p>
     <sm-component></sm-component>
+    <div>Este texto no es influenciado por el estilo de los Web Components</div>
+    <a is="sm-confirm-link" href="https://www.google.com/">Go to Google!</a>
+
+ 
 </body>
 
 </html>
